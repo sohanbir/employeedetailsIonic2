@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Employee Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-img style="width: 100px; height: 100px;" src="https://scontent.cdninstagram.com/t51.2885-19/10802413_768212263225849_921508046_a.jpg"></ion-img>
+    <ion-item>
+  <ion-label stacked>Employee Name</ion-label>
+  <ion-input value={{info.name}} disabled></ion-input>
+</ion-item>
+
+
+<ion-item>
+  <ion-label stacked>Email</ion-label>
+  <ion-input type="email" value={{info.emailAddress}} disabled></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Phone</ion-label>
+  <ion-input type="number" [(ngModel)]="phoneNumber" min="1111111111" max="9999999999" maxlength="10" minlength="10"></ion-input>
+</ion-item>
+<ion-fab bottom right >
+  <button ion-fab (click)="callNumber()">
+    <ion-icon name="call"></ion-icon>
+  </button>
+</ion-fab>
+<ion-item>
+  <ion-label stacked>Address</ion-label>
+  <ion-input value={{info.address}} disabled></ion-input>
+</ion-item>
+<p>To talk call on this {{phoneNumber}}</p>
+<div #map id="map" style="height:70%"></div>
+
+</ion-content>
